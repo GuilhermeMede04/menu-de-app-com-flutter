@@ -12,49 +12,81 @@ class _SegundaPaginaState extends State<SegundaPagina> {
   bool favorito = false;
   bool mostrarMais = false;
 
+  Widget espacoAltura(double altura) {
+    return SizedBox(height: altura);
+  }
+
+  Widget botaoInfo(String texto) {
+    return Expanded(
+      child: SizedBox(
+        height: 45,
+        child: OutlinedButton(
+          onPressed: () {},
+
+          style: OutlinedButton.styleFrom(
+            side: const BorderSide(color: Colors.black),
+
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.zero,
+            ),
+          ),
+
+          child: Text(
+            texto,
+
+            style: const TextStyle(
+              color: Colors.black,
+              fontSize: 12,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-        onPressed: () {
+          onPressed: () {
+            Navigator.pop(context);
+          },
 
-          Navigator.pop(context);
-         },
-
-        icon: const Icon(
-          Icons.arrow_back,
-          color: Colors.black,
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
         ),
-      ),
 
         actions: [
-          Row(
-            children: [
-              const Icon(
-                Icons.share_outlined,
-                color: Colors.black,
-                size: 30,
-              ),
 
-              const SizedBox(width: 20),
+          IconButton(
+            onPressed: () {},
 
-              const Icon(
-                Icons.search,
-                color: Colors.black,
-                size: 30,
-              ),
+            icon: const Icon(
+              Icons.share_outlined,
+              color: Colors.black,
+            ),
+          ),
 
-              const SizedBox(width: 20),
+          IconButton(
+            onPressed: () {},
 
-              const Icon(
-                Icons.shopping_bag_outlined,
-                color: Colors.black,
-                size: 30,
-              ),
+            icon: const Icon(
+              Icons.search,
+              color: Colors.black,
+            ),
+          ),
 
-              const SizedBox(width: 20),
-            ],
+          IconButton(
+            onPressed: () {},
+
+            icon: const Icon(
+              Icons.shopping_bag_outlined,
+              color: Colors.black,
+            ),
           ),
         ],
       ),
@@ -84,7 +116,7 @@ class _SegundaPaginaState extends State<SegundaPagina> {
               ),
             ),
 
-            const SizedBox(height: 20),
+            espacoAltura(20),
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -96,8 +128,7 @@ class _SegundaPaginaState extends State<SegundaPagina> {
 
                   Expanded(
                     child: Column(
-                      crossAxisAlignment:
-                          CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
 
                       children: [
 
@@ -124,8 +155,7 @@ class _SegundaPaginaState extends State<SegundaPagina> {
                   ),
 
                   Column(
-                    crossAxisAlignment:
-                        CrossAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.end,
 
                     children: [
 
@@ -134,10 +164,8 @@ class _SegundaPaginaState extends State<SegundaPagina> {
 
                         style: GoogleFonts.poppins(
                           fontSize: 12,
-                          decoration:
-                              TextDecoration.lineThrough,
-
                           color: Colors.grey,
+                          decoration: TextDecoration.lineThrough,
                         ),
                       ),
 
@@ -155,22 +183,18 @@ class _SegundaPaginaState extends State<SegundaPagina> {
               ),
             ),
 
-            const SizedBox(height: 1),
+            const SizedBox(height: 5),
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
 
-              child: Align(
-                alignment: Alignment.centerLeft,
-
-                child: Image.asset(
-                  'assets/avaliação.png',
-                  width: 90,
-                ),
+              child: Image.asset(
+                'assets/avaliação.png',
+                width: 90,
               ),
             ),
 
-            const SizedBox(height: 30),
+            espacoAltura(30),
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -178,124 +202,33 @@ class _SegundaPaginaState extends State<SegundaPagina> {
               child: Row(
                 children: [
 
-                  Expanded(
-                    child: SizedBox(
-                      height: 45,
-
-                      child: OutlinedButton(
-                        onPressed: () {},
-
-                        style:
-                            OutlinedButton.styleFrom(
-                          shape:
-                              RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.zero,
-                          ),
-
-                          side: const BorderSide(
-                            color: Colors.black,
-                          ),
-                        ),
-
-                        child: const Text(
-                          'Description',
-
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  botaoInfo('Description'),
 
                   const SizedBox(width: 10),
 
-                  Expanded(
-                    child: SizedBox(
-                      height: 45,
-
-                      child: OutlinedButton(
-                        onPressed: () {},
-
-                        style:
-                            OutlinedButton.styleFrom(
-                          shape:
-                              RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.zero,
-                          ),
-
-                          side: const BorderSide(
-                            color: Colors.black,
-                          ),
-                        ),
-
-                        child: const Text(
-                          'How To Use',
-
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  botaoInfo('How To Use'),
 
                   const SizedBox(width: 10),
 
-                  Expanded(
-                    child: SizedBox(
-                      height: 45,
-
-                      child: OutlinedButton(
-                        onPressed: () {},
-
-                        style:
-                            OutlinedButton.styleFrom(
-                          shape:
-                              RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.zero,
-                          ),
-
-                          side: const BorderSide(
-                            color: Colors.black,
-                          ),
-                        ),
-
-                        child: const Text(
-                          'Ingredients',
-
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  botaoInfo('Ingredients'),
                 ],
               ),
             ),
 
-            const SizedBox(height: 30),
+            espacoAltura(30),
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
 
               child: Column(
-                crossAxisAlignment:
-                    CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
 
                 children: [
 
                   Text(
                     mostrarMais
-                        ? 'FPSA Hyaluronic Acid Essence Water deeply hydrates skin, restores moisture balance, improves elasticity, smooths texture, refreshes dulness, soothes irritation, absorbs quickly.'
-                        : 'A premium skincare product designed to hydrate, brighten, and restore your natural glow.',
+                        ? 'FPSA Hyaluronic Acid Essence Water deeply hydrates skin, restores moisture balance, improves elasticity, smooths texture, refreshes dulness and absorbs quickly.'
+                        : 'A premium skincare product designed to hydrate and restore your natural glow.',
 
                     style: GoogleFonts.poppins(
                       fontSize: 16,
@@ -321,7 +254,6 @@ class _SegundaPaginaState extends State<SegundaPagina> {
                       style: GoogleFonts.poppins(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
                       ),
                     ),
                   ),
@@ -329,7 +261,7 @@ class _SegundaPaginaState extends State<SegundaPagina> {
               ),
             ),
 
-            const SizedBox(height: 120),
+            espacoAltura(100),
           ],
         ),
       ),
@@ -368,10 +300,9 @@ class _SegundaPaginaState extends State<SegundaPagina> {
                       ? Icons.favorite
                       : Icons.favorite_border,
 
-                  color:
-                      favorito
-                          ? Colors.red
-                          : Colors.black,
+                  color: favorito
+                      ? Colors.red
+                      : Colors.black,
                 ),
               ),
             ),
@@ -389,8 +320,7 @@ class _SegundaPaginaState extends State<SegundaPagina> {
                     backgroundColor: Colors.black,
 
                     shape: RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.zero,
+                      borderRadius: BorderRadius.zero,
                     ),
                   ),
 
